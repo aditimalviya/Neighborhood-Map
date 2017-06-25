@@ -1,14 +1,14 @@
-/* .row{
+.row{
     margin-left:0px;
     margin-right:0px;
-} */
-body{
+}
+/* body{
   height: 100%;
 }
 header{
   text-align: center;
   width: 100%;
-}
+} */
 #map{
   height: 600px;
   width: 99%;
@@ -26,16 +26,21 @@ header{
   width: 200px;
   height: 200px;
 }
-/* #wrapper {
-    padding-left: 70px;
+.row{
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#wrapper {
+    padding-left: 50px;
     transition: all .4s ease 0s;
-    height: 100%;
+    height: 100%
 }
 
 #sidebar-wrapper {
-    margin-left: -150px;
-    left: 70px;
-    width: 150px;
+    margin-left: -250px;
+    left: 50px;
+    width: 250px;
     background: #222;
     position: fixed;
     height: 100%;
@@ -43,10 +48,14 @@ header{
     transition: all .4s ease 0s;
 }
 
+.no-padding{
+  padding: 0;
+}
+
 .sidebar-nav {
     display: block;
     float: left;
-    width: 150px;
+    width: 200px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -57,11 +66,11 @@ header{
     width: 100%;
     height: auto;
 }
-#wrapper .active {
-    padding-left: 150px;
+#wrapper.active {
+    padding-left: 250px;
 }
 #wrapper.active #sidebar-wrapper {
-    left: 150px;
+    left: 250px;
 }
 
 #page-content-wrapper {
@@ -73,7 +82,7 @@ header{
     display: block;
     float: left;
     text-decoration: none;
-    width: 150px;
+    width: 250px;
     background: #252525;
     border-top: 1px solid #373737;
     border-bottom: 1px solid #1A1A1A;
@@ -89,7 +98,7 @@ header{
     opacity: .7;
 }
 
-.sidebar-nav li a{
+.sidebar-nav li {
   line-height: 40px;
   text-indent: 20px;
 }
@@ -111,7 +120,7 @@ header{
   text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand a{
+.sidebar-nav > .sidebar-brand {
   height: 65px;
   line-height: 60px;
   font-size: 18px;
@@ -129,13 +138,13 @@ header{
 #main_icon
 {
     float:right;
-   padding-right: 40px;
+   padding-right: 18px;
    padding-top:20px;
 }
 .sub_icon
 {
     float:right;
-   padding-right: 40px;
+   padding-right: 65px;
    padding-top:10px;
 }
 .content-header {
@@ -149,24 +158,25 @@ header{
   line-height: 65px;
   display: inline-block;
 }
- */
+
 @media (max-width:767px) {
     #wrapper {
-    padding-left: 70px;
+    padding-left: 50px;
     transition: all .4s ease 0s;
 }
 #sidebar-wrapper {
-    left: 70px;
+    left: 50px;
 }
 #wrapper.active {
     padding-left: 150px;
 }
 #wrapper.active #sidebar-wrapper {
-    left: 150px;
-    width: 150px;
+    left: 250px;
+    width: 250px;
     transition: all .4s ease 0s;
 }
 }
+
 #map{
     height: 750px;
     width: 100%;

@@ -1,66 +1,61 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Neighborhood Map</title>
-       <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-       <script async src="script.js"></script>
-    </head>
-    <body>
-    <div class ="container">
-    <div class="row ">
 
-        <header class="row">
-        <div class="col-xs-12 ">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script async src="script.js"></script>
+</head>
 
-            <h1>Malls In Bangalore </h1>
-
+<body>
+    <div id="wrapper" class="active">
+        <div id="sidebar-wrapper">
+            <ul id="sidebar_menu" class="sidebar-nav">
+                <li class="sidebar-brand"><a id="menu-toggle" id="#">Malls<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+            </ul>
+            <ul class="sidebar-nav" id="sidebar">
+                <div class="input_places">
+                    <input id="inputvalue" type="text" class="form-control" placeholder="explore places" data-bind="value:place_input,valueUpdate:'afterkeydown',event:{keyup:refresh_List}">
+                </div>
+                <div class="output_places">
+                    <ul class="list-group" data-bind="foreach: selected_place">
+                        <li class="list-group-item" data-bind="css:{active:selection},text:placename,visible:show,click:$parent.dMark">
+                        </li>
+                    </ul>
+                </div>
+            </ul>
         </div>
-        </header>
-        <div class="col-xs-6">
-            <p>List of Malls</p>
-        </div>
+        <div id="page-content-wrapper">
+            <div class="page-content inset">
+                <div class="row">
+                    <div class="col-md-12 no-padding">
+                        <div id="map">
 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="row">
-
-        <div class="col-sm-3">
-
-            <div class="input_places">
-                <input id="inputvalue" type="text" class="form-control" placeholder="explore places" data-bind="value:place_input,valueUpdate:'afterkeydown',event:{keyup:refresh_List}">
-            </div>
-            <div class="output_places">
-                <ul class="list-group" data-bind="foreach: selected_place">
-                    <li class="list-group-item" data-bind="css:{active:selection},text:placename,visible:show,click:$parent.dMark">
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="col-sm-9">
-
-            <div id="map">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
-    <script src="knockout-3.4.2.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyCQ2X4qy-VHZYDP1yuE64t9-Iru8NpIJPs&v=3&callback=initMap" onerror="errorHandling()">
+    <script type="text/javascript">
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
     </script>
-    </body>
+
+    <script src="script.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyCQ2X4qy-VHZYDP1yuE64t9-Iru8NpIJPs&v=3&callback=initMap"
+        onerror="errorHandling()">
+
+        </script>
+</body>
